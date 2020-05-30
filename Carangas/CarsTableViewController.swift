@@ -10,9 +10,22 @@ import UIKit
 class CarsTableViewController: UITableViewController {
 
     var cars: [Car] = []
+    var loading = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl?.addTarget(self, action: #selector(loadCars), for: .valueChanged)
+        
+        /*
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        loading.style = .whiteLarge
+        loading.tintColor = .systemGreen
+        loading.color = .systemGreen
+        loading.frame.origin = CGPoint(x: 250, y: 300)
+        loading.hidesWhenStopped = true
+        view.addSubview(loading)
+        loading.startAnimating()
+        */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,9 +33,13 @@ class CarsTableViewController: UITableViewController {
         loadCars()
     }
     
-    private func loadCars() {
+    @objc func loadCars() {
         CarAPI.loadCars { [weak self] (result) in
             guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.loading.stopAnimating()
+            }
             switch result {
             case .success(let cars):
                 self.cars = cars
@@ -57,5 +74,23 @@ class CarsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = car.brand
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let car = cars[indexPath.row]
+            CarAPI.deleteCar(car) { [weak self] (result) in
+                guard let self = self else {return}
+                switch result {
+                case .success:
+                    self.cars.remove(at: indexPath.row)
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                case .failure:
+                    Alert.show(title: "Erro", message: "Não foi possível excluir o carro", presenter: self)
+                }
+            }
+        }
     }
 }

@@ -76,12 +76,49 @@ class CarAPI {
     }
     
     private static func request(operation: RESTOperation, car: Car, onComplete: @escaping (Result<Bool, APIError>)->Void) {
+        let carID = car._id.🧨
+        guard let url = URL(string: "\(basePath)/\(carID)") else {
+            onComplete(.failure(.badURL))
+            return
+        }
         
+        var request = URLRequest(url: url)
+        request.httpMethod = operation.rawValue
+        request.httpBody = try? JSONEncoder().encode(car)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let _ = error {
+                onComplete(.failure(.taskError))
+                return
+            }
+            guard let response = response as? HTTPURLResponse else {
+                onComplete(.failure(.badResponse))
+                return
+            }
+            if response.statusCode != 200 {
+                onComplete(.failure(.invalidStatusCode(response.statusCode)))
+                return
+            }
+            guard let _ = data else {
+                onComplete(.failure(.noData))
+                return
+            }
+            do {
+                onComplete(.success(true))
+            }
+        }
+        task.resume()
+    }
+    
+    static func cancelAllTasks() {
+        session.getAllTasks { (task) in
+            task.forEach({$0.cancel()})
+        }
     }
 }
 
 enum RESTOperation: String {
-    case update = "UPDATE"
+    case update = "PUT"
     case create = "POST"
     case delete = "DELETE"
 }

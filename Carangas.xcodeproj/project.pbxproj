@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2257BBAE2481C513003CC992 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAD2481C513003CC992 /* Car.swift */; };
 		2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAF2481C87E003CC992 /* CarAPI.swift */; };
+		2257BBB2248288CC003CC992 /* Optional+Valid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBB1248288CC003CC992 /* Optional+Valid.swift */; };
+		2257BBB42482915F003CC992 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBB32482915F003CC992 /* Alert.swift */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2257BBAD2481C513003CC992 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		2257BBAF2481C87E003CC992 /* CarAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAPI.swift; sourceTree = "<group>"; };
+		2257BBB1248288CC003CC992 /* Optional+Valid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Valid.swift"; sourceTree = "<group>"; };
+		2257BBB32482915F003CC992 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				A19C4BE81F92C57D00A25342 /* Assets.xcassets */,
 				A19C4BEA1F92C57D00A25342 /* LaunchScreen.storyboard */,
 				A19C4BED1F92C57D00A25342 /* Info.plist */,
+				2257BBB1248288CC003CC992 /* Optional+Valid.swift */,
+				2257BBB32482915F003CC992 /* Alert.swift */,
 			);
 			path = Carangas;
 			sourceTree = "<group>";
@@ -153,7 +159,9 @@
 				2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
 				2257BBAE2481C513003CC992 /* Car.swift in Sources */,
+				2257BBB2248288CC003CC992 /* Optional+Valid.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
+				2257BBB42482915F003CC992 /* Alert.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
