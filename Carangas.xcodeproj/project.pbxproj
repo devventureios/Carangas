@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2257BBAE2481C513003CC992 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAD2481C513003CC992 /* Car.swift */; };
+		2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAF2481C87E003CC992 /* CarAPI.swift */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2257BBAD2481C513003CC992 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2257BBAF2481C87E003CC992 /* CarAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAPI.swift; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				A19C4BE31F92C57D00A25342 /* CarViewController.swift */,
 				A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */,
 				A16BA8661F953B940045AD32 /* AddEditViewController.swift */,
+				2257BBAF2481C87E003CC992 /* CarAPI.swift */,
+				2257BBAD2481C513003CC992 /* Car.swift */,
 				A19C4BE51F92C57D00A25342 /* Main.storyboard */,
 				A19C4BE81F92C57D00A25342 /* Assets.xcassets */,
 				A19C4BEA1F92C57D00A25342 /* LaunchScreen.storyboard */,
@@ -144,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */,
+				2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
+				2257BBAE2481C513003CC992 /* Car.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,
 			);
