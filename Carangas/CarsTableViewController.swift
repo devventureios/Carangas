@@ -33,6 +33,13 @@ class CarsTableViewController: UITableViewController {
         loadCars()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let carViewController = segue.destination as? CarViewController,
+           let carIndex = tableView.indexPathForSelectedRow?.row {
+            carViewController.car = cars[carIndex]
+        }
+    }
+    
     @objc func loadCars() {
         CarAPI.loadCars { [weak self] (result) in
             guard let self = self else {return}

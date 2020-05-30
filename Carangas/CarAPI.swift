@@ -110,11 +110,34 @@ class CarAPI {
         task.resume()
     }
     
+    static func loadBrands(onComplete: @escaping (Result<[String], APIError>)->Void) {
+        guard let url = URL(string: "http://fipeapi.appspot.com/api/1/carros/marcas.json") else {
+            return onComplete(.failure(.badURL))
+        }
+        session.dataTask(with: url) { (data, _, _) in
+            guard let data = data else {
+                return onComplete(.failure(.noData))
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            if let brands = try? decoder.decode([Brand].self, from: data) {
+                let brandsStrings = brands.map({$0.fipeName})
+                onComplete(.success(brandsStrings))
+            } else {
+                onComplete(.failure(.invalidJSON))
+            }
+        }.resume()
+    }
+    
     static func cancelAllTasks() {
         session.getAllTasks { (task) in
             task.forEach({$0.cancel()})
         }
     }
+}
+
+struct Brand: Codable {
+    var fipeName: String
 }
 
 enum RESTOperation: String {

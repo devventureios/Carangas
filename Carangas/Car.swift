@@ -11,10 +11,10 @@ import Foundation
 class Car: Codable {
     
     var _id: String?
-    var brand: String
-    var gasType: Int
-    var name: String
-    var price: Int
+    var brand: String = ""
+    var gasType: Int = 0
+    var name: String = ""
+    var price: Double = 0
     
     var gas: String {
         switch gasType {
@@ -25,5 +25,12 @@ class Car: Codable {
         default:
             return "Gasolina"
         }
+    }
+    
+    var formattedPrice: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "pt_BR")
+        return formatter.string(from: NSNumber(value: price)) ?? "R$ \(price)"
     }
 }
