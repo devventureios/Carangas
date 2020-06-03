@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220B3CEC248856DB00A762D0 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B3CEB248856DB00A762D0 /* CarViewModel.swift */; };
+		220B3CEE24885D8B00A762D0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B3CED24885D8B00A762D0 /* Formatter.swift */; };
+		220B3CF124885DFD00A762D0 /* AddEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B3CF024885DFD00A762D0 /* AddEditViewModel.swift */; };
 		2257BBAE2481C513003CC992 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAD2481C513003CC992 /* Car.swift */; };
 		2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBAF2481C87E003CC992 /* CarAPI.swift */; };
 		2257BBB2248288CC003CC992 /* Optional+Valid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2257BBB1248288CC003CC992 /* Optional+Valid.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220B3CEB248856DB00A762D0 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
+		220B3CED24885D8B00A762D0 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		220B3CF024885DFD00A762D0 /* AddEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewModel.swift; sourceTree = "<group>"; };
 		2257BBAD2481C513003CC992 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		2257BBAF2481C87E003CC992 /* CarAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAPI.swift; sourceTree = "<group>"; };
 		2257BBB1248288CC003CC992 /* Optional+Valid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Valid.swift"; sourceTree = "<group>"; };
@@ -53,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220B3CEA248856C000A762D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				220B3CEB248856DB00A762D0 /* CarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		220B3CEF24885DE200A762D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				220B3CF024885DFD00A762D0 /* AddEditViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		22B884C7248720FA00C79F32 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 		22B884CC2487214400C79F32 /* Visualization */ = {
 			isa = PBXGroup;
 			children = (
+				220B3CEA248856C000A762D0 /* ViewModel */,
 				22B884CD2487214B00C79F32 /* Controller */,
 			);
 			path = Visualization;
@@ -115,6 +138,7 @@
 		22B884CE2487215400C79F32 /* Creation and Visualization */ = {
 			isa = PBXGroup;
 			children = (
+				220B3CEF24885DE200A762D0 /* ViewModel */,
 				22B884CF2487216100C79F32 /* Controller */,
 			);
 			path = "Creation and Visualization";
@@ -142,6 +166,7 @@
 				2257BBB32482915F003CC992 /* Alert.swift */,
 				2257BBAF2481C87E003CC992 /* CarAPI.swift */,
 				2257BBAD2481C513003CC992 /* Car.swift */,
+				220B3CED24885D8B00A762D0 /* Formatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,12 +302,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */,
+				220B3CEE24885D8B00A762D0 /* Formatter.swift in Sources */,
 				2257BBB02481C87E003CC992 /* CarAPI.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
 				2257BBAE2481C513003CC992 /* Car.swift in Sources */,
 				22B884D8248725D400C79F32 /* CarTableViewCell.swift in Sources */,
+				220B3CF124885DFD00A762D0 /* AddEditViewModel.swift in Sources */,
 				22B884D6248722A300C79F32 /* CarsListingViewModel.swift in Sources */,
 				22B884DA2487264200C79F32 /* CarCellViewModel.swift in Sources */,
+				220B3CEC248856DB00A762D0 /* CarViewModel.swift in Sources */,
 				2257BBB2248288CC003CC992 /* Optional+Valid.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
 				2257BBB42482915F003CC992 /* Alert.swift in Sources */,

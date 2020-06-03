@@ -23,9 +23,15 @@ class CarsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let carViewController = segue.destination as? CarViewController,
-           let indexPath = tableView.indexPathForSelectedRow {
-            carViewController.car = viewModel.getCar(at: indexPath)
+        switch segue.destination {
+        case let carViewController as CarViewController:
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let car = viewModel.getCar(at: indexPath)
+            carViewController.viewModel = CarViewModel(car: car)
+        case let addEditViewController as AddEditViewController:
+            addEditViewController.viewModel = AddEditViewModel()
+        default:
+            break
         }
     }
     

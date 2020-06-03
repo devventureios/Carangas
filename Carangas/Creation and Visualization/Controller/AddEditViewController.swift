@@ -15,6 +15,8 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var scGasType: UISegmentedControl!
     @IBOutlet weak var btAddEdit: UIButton!
     
+    var viewModel: AddEditViewModel?
+    
     var car: Car!
     var brands: [String] = []
     lazy var pickerViewBrands: UIPickerView = {
@@ -31,7 +33,7 @@ class AddEditViewController: UIViewController {
             btAddEdit.setTitle("Editar carro", for: .normal)
             tfBrand.text = car.brand
             tfName.text = car.name
-            tfPrice.text = "\(car.formattedPrice)"
+            tfPrice.text = "R$ \(car.price)"
             scGasType.selectedSegmentIndex = car.gasType
         }
         setupBrands()

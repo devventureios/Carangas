@@ -13,7 +13,7 @@ class CarViewController: UIViewController {
     @IBOutlet weak var lbGasType: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
 
-    var car: Car?
+    var viewModel: CarViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +21,17 @@ class CarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let car = car {
-            title = car.name
-            lbBrand.text = car.brand
-            lbGasType.text = car.gas
-            lbPrice.text = car.formattedPrice
+        if let viewModel = viewModel {
+            title = viewModel.title
+            lbBrand.text = viewModel.brand
+            lbGasType.text = viewModel.gasType
+            lbPrice.text = viewModel.price
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addEditViewController = segue.destination as? AddEditViewController {
-            addEditViewController.car = car
+            addEditViewController.viewModel = AddEditViewModel(car: viewModel?.car)
         }
     }
 }
