@@ -7,6 +7,12 @@
 
 import UIKit
 
+//MVVM
+//Model -> Inteligência
+//View -> Camada visual, interação do usuário
+//ViewModel -> Preparação dos dados da Model para a Controller
+//Controller -> Ponte entre a ViewModel e a View
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
