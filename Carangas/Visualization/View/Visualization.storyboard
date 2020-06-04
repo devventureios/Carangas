@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sgV-b4-M3W">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Caranga-->
+        <scene sceneID="Jgc-sf-Gag">
+            <objects>
+                <viewController id="sgV-b4-M3W" customClass="CarViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9Y-Om-VPW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="oJq-Yj-EQn">
+                                <rect key="frame" x="24" y="64" width="366" height="73.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcK-yy-gs8">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" name="main"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combustível:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-pS-3Id">
+                                        <rect key="frame" x="0.0" y="26.5" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 90.000,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6d-it-wsQ">
+                                        <rect key="frame" x="0.0" y="53" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oJq-Yj-EQn" firstAttribute="leading" secondItem="fms-P4-Ckz" secondAttribute="leading" constant="24" id="6Xj-gn-dIX"/>
+                            <constraint firstItem="oJq-Yj-EQn" firstAttribute="top" secondItem="fms-P4-Ckz" secondAttribute="top" constant="20" id="flf-fk-JFW"/>
+                            <constraint firstItem="fms-P4-Ckz" firstAttribute="trailing" secondItem="oJq-Yj-EQn" secondAttribute="trailing" constant="24" id="pPw-0h-ntd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fms-P4-Ckz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Caranga" id="fyE-wU-0ZD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2U-xp-yjG">
+                            <connections>
+                                <segue destination="IR1-rI-3dG" kind="show" identifier="editSegue" id="e9Q-5N-22S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbBrand" destination="qcK-yy-gs8" id="BE9-6d-ZE5"/>
+                        <outlet property="lbGasType" destination="WwY-pS-3Id" id="vfU-ha-yGe"/>
+                        <outlet property="lbPrice" destination="j6d-it-wsQ" id="Vlx-R7-3DJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dts-hI-FEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653.5999999999999" y="458.32083958020991"/>
+        </scene>
+        <!--CreateUpdate-->
+        <scene sceneID="NFr-gR-1xt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateUpdate" id="IR1-rI-3dG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cDd-oZ-fqt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJO-x9-dNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="458"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="main">
+            <color red="0.24300000071525574" green="0.62699997425079346" blue="0.64300000667572021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

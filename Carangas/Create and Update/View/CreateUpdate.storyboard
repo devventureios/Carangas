@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POk-h0-Csc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cadastro-->
+        <scene sceneID="5ea-aY-wg2">
+            <objects>
+                <viewController id="POk-h0-Csc" customClass="AddEditViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Opv-VU-hXt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ms-ow-Tsz">
+                                <rect key="frame" x="24" y="64" width="366" height="201"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eoF-85-bij">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tKh-Q1-is4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="POk-h0-Csc" id="kaH-CH-jGZ"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piD-SD-yVf">
+                                        <rect key="frame" x="0.0" y="40" width="366" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="iH5-cD-wMN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="POk-h0-Csc" id="0p4-rg-bR4"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preço (R$ ###,##)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g28-ii-qKG">
+                                        <rect key="frame" x="0.0" y="80" width="366" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JNy-I4-nmb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="POk-h0-Csc" id="SEK-xp-38O"/>
+                                        </connections>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gpl-Dg-zsW">
+                                        <rect key="frame" x="0.0" y="120" width="366" height="32"/>
+                                        <segments>
+                                            <segment title="Flex"/>
+                                            <segment title="Álcool"/>
+                                            <segment title="Gasolina"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLP-Xz-fAO">
+                                        <rect key="frame" x="0.0" y="161" width="366" height="40"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="S34-qW-Fbo"/>
+                                        </constraints>
+                                        <state key="normal" title="Cadastrar Carro">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addEdit:" destination="POk-h0-Csc" eventType="touchUpInside" id="rh3-Qt-Mov"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Ms-ow-Tsz" firstAttribute="top" secondItem="ai9-Mv-Cf6" secondAttribute="top" constant="20" id="4XT-yu-qqD"/>
+                            <constraint firstItem="ai9-Mv-Cf6" firstAttribute="trailing" secondItem="9Ms-ow-Tsz" secondAttribute="trailing" constant="24" id="Svx-VN-B36"/>
+                            <constraint firstItem="9Ms-ow-Tsz" firstAttribute="leading" secondItem="ai9-Mv-Cf6" secondAttribute="leading" constant="24" id="cSn-of-OAZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ai9-Mv-Cf6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cadastro" id="4QR-jO-Yk8"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="qLP-Xz-fAO" id="Gvw-HC-28Z"/>
+                        <outlet property="scGasType" destination="gpl-Dg-zsW" id="dYe-De-6d0"/>
+                        <outlet property="tfBrand" destination="eoF-85-bij" id="yi4-G7-f2B"/>
+                        <outlet property="tfName" destination="piD-SD-yVf" id="Y8b-Fs-IQ5"/>
+                        <outlet property="tfPrice" destination="g28-ii-qKG" id="v9A-JQ-VZ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03K-YR-gOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="-380"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="main">
+            <color red="0.24300000071525574" green="0.62699997425079346" blue="0.64300000667572021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
