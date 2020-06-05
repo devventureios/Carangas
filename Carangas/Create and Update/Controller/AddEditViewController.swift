@@ -16,6 +16,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var btAddEdit: UIButton!
     
     var viewModel: AddEditViewModel?
+    weak var coordinator: AddEditCoordinator?
     
     lazy var pickerViewBrands: UIPickerView = {
         let pickerView = UIPickerView()
@@ -65,6 +66,11 @@ class AddEditViewController: UIViewController {
     
     func goBack() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    deinit {
+        print("AddEditViewController deinit")
+        coordinator?.childDidFinish(coordinator)
     }
 }
 

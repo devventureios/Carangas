@@ -12,7 +12,7 @@
         <!--Cadastro-->
         <scene sceneID="5ea-aY-wg2">
             <objects>
-                <viewController id="POk-h0-Csc" customClass="AddEditViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditViewController" id="POk-h0-Csc" customClass="AddEditViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Opv-VU-hXt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

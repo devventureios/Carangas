@@ -7,9 +7,19 @@
 
 import UIKit
 
-class CarsTableViewController: UITableViewController {
+protocol CarPresentable: class {
+    func showCar(_ car: Car)
+}
+protocol CarCreationEnabled {
+    func createCar()
+}
 
+typealias CarEnable = CarPresentable & CarCreationEnabled
+
+class CarsTableViewController: UITableViewController {
+    
     lazy var viewModel = CarsListingViewModel()
+    weak var coordinator: CarEnable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +30,6 @@ class CarsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadCars()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.destination {
-        case let carViewController as CarViewController:
-            guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            let car = viewModel.getCar(at: indexPath)
-            carViewController.viewModel = CarViewModel(car: car)
-        case let addEditViewController as AddEditViewController:
-            addEditViewController.viewModel = AddEditViewModel()
-        default:
-            break
-        }
     }
     
     func carsLoaded() {
@@ -46,6 +43,12 @@ class CarsTableViewController: UITableViewController {
         viewModel.loadCars()
     }
     
+    // MARK: - IBActions
+    @IBAction func createCar(_ sender: UIBarButtonItem) {
+        coordinator?.createCar()
+    }
+    
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
@@ -55,6 +58,11 @@ class CarsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CarTableViewCell
         cell.configure(with: viewModel.cellViewModelFor(indexPath: indexPath))
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let car = viewModel.getCar(at: indexPath)
+        coordinator?.showCar(car)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
